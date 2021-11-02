@@ -18,7 +18,7 @@ namespace Slide04 {
 
   getFullName(new Customer())
 
-  // getFullName(new Extern()) // Error
+  //getFullName(new Extern()) // Error
 
   function getFullName(user: User): string {
     return user.firstName + user.lastName

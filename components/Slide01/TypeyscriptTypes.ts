@@ -16,15 +16,16 @@ namespace Slide01 {
   
   const tuple: [number, number, number] = [0, 1, 2]
   
-  const tuble01: [number, string, boolean] = [0, 'Hello!', false]
+  const tuble01: [number, 'Hello!', boolean] = [0, 'Hello!', false]
   
-  
-  const notSure: unknown = 20
+  const notSure: unknown = 'test'
+
+  const everything: any = 'test'
   
   const u: undefined = undefined
   
   const n: null = null
-  
+
   function returnsVoid(): void {
     // Do stuff
   }

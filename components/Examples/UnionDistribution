@@ -1,0 +1,49 @@
+namespace UnionDistribution {
+
+  // Mapped Types with union
+  type Union = number | 'foo' | 'bar'
+
+  type NoStringMapped = {
+    [k in Union]: k extends string ? never : k
+  }[Union]
+
+  type NoStringDistributed<T> = T extends string ? never : T
+
+  type NoStringUnion = NoStringDistributed<Union>
+
+  type NoStringDistributedUnion = NoStringDistributed<number> | NoStringDistributed<'foo'> | NoStringDistributed<'bar'>
+
+  
+  interface UserWithData<T> {
+    id: number
+    data: T
+    data2: T
+  }
+  // UserWithData<Union> => UserWithData<number> | UserWithData<'foo'> | UserWithData<'bar'>
+
+  const user: UserWithData<Union> = {
+    id: 0,
+    data: 'foo',
+    data2: 'bar',
+  }
+
+  // UserWithData<Union> => UserWithData<number | 'foo' | 'bar'>
+
+
+
+
+  
+  type DistributeOnUserWithData<T> = T extends any ? UserWithData<T> : never
+
+  const user1: DistributeOnUserWithData<Union> = {
+    id: 0,
+    data: 'foo',
+    data2: 'foo',
+  }
+  /*
+   DistributeOnUserWithData<Union> => (number extends any ? UserWithData<number> : never)
+    | (number extends any ? UserWithData<number> : never)
+    | ('foo' extends any ? UserWithData<'foo'> : never)
+    | ('bar' extends any ? UserWithData<'bar'> : never)
+  */
+  }

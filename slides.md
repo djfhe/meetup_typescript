@@ -7,10 +7,54 @@ lineNumbers: true
 drawings:
   persist: false
 layout: default
+
 ---
 
 <Fact>
-  <b>What is Typescript ?</b>
+  <b>Typescript</b>
+</Fact>
+
+---
+
+<div class="text-blue-400 text-center">
+  https://www.typescriptlang.org/
+</div>
+
+---
+
+<div class="self-center">
+  <h1 class="mb-4 text-3xl font-bold">Wer bin ich?</h1>
+  <ul class="space-y-4 text-2xl">
+    <li v-click="1">Daniel Thoma</li>
+    <li v-click="2">Bachelor Student der TU Darmstadt</li>
+    <li v-click="3">Seit 01.06.2021 Werkstudent bei clickbar. GmbH</li>
+    <li v-click="4">Seit 2 Jahren in der Webentwicklung tätig</li>
+  </ul>
+</div>
+
+---
+
+<Fact>
+  Warum <b> Typescript?</b>
+</Fact>
+
+<!--
+Die Webentwicklung hat sich im laufe der Zeit sehr stark verändert. Währen der Fokus ursprünglich auf einfache Blogs bzw. Artikeln lag, so entstehen inzwischen jedoch immer größere und komplexere Projekte.
+-->
+
+---
+
+<div class="self-center">
+
+  <h1>Javascript Bytes</h1>
+
+  <img class="object-fit w-160" src="/javascript_bytes.png"/>
+</div>
+
+---
+
+<Fact>
+  <b>Was ist Typescript?</b>
 </Fact>
 
 ---
@@ -56,6 +100,8 @@ const tuble01: [number, string, boolean] = [0, 'Hello!', false]
 ```ts {all|1|3-5|7-13|all}
 const notSure: unknown = 20
 
+const everything: any = 'hello'
+
 const u: undefined = undefined
 
 const n: null = null
@@ -79,7 +125,7 @@ function neverReturns(): never {
 ---
 
 <Fact>
-  TypeScript is a <br> <b>superset of Javascript.</b>
+  TypeScript ist ein <br> <b>Superset von Javascript.</b>
 </Fact>
 
 ---
@@ -117,7 +163,7 @@ function updateUserInJavascript(id, update) {
 ---
 
 <Fact>
-  TypeScript does <br> <b> not exist at Runtime.</b>
+  TypeScript existiert <br> <b> nicht zur Laufzeit.</b>
 </Fact>
 
 ---
@@ -148,7 +194,7 @@ class Customer implements User {
 ---
 
 <Fact>
-  TypeScript relies on <br> <b> structural typing.</b>
+  TypeScript nutzt <br> <b> Structural Typing.</b>
 </Fact>
 
 ---
@@ -191,22 +237,12 @@ function getFullName(user: User): string {
 
 ---
 
-Vorteile:
-- Autocompletion
-- Bugs vorbeugung
-  - Error bei Änderungen
-  - Typos
-  - logik Fehler
-
-Typemanipulation
-- casting
-- generics
-- keyof | typeof
-- conditional types
-- mapped types
-- template liters
-
-- @ts-expect-error
-- @ts-ignore
-
-- Utility Types
+<Fact>
+  Wie hilft <b> Typescript?</b>
+</Fact>
+<button
+  @click="$slidev.nav.openInEditor('./components/Examples/Advantages.ts')"
+  title="Open in Editor"
+  class="text-xl icon-btn opacity-50 !border-none !hover:text-white ml-auto">
+  <carbon:edit />
+</button>
